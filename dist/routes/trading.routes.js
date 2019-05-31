@@ -71,36 +71,32 @@ function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             id = req.params.id;
-            _context2.next = 3;
-            return (0, _database.connect)();
-
-          case 3:
-            db = _context2.sent;
-            _context2.prev = 4;
-            _context2.next = 7;
+            db = req.app.locals.database;
+            _context2.prev = 2;
+            _context2.next = 5;
             return db.collection(collection).find({
-              store_id: (0, _mongodb.ObjectID)(id)
+              store_id: id
             });
 
-          case 7:
+          case 5:
             result = _context2.sent;
             res.json(result);
-            _context2.next = 14;
+            _context2.next = 12;
             break;
 
-          case 11:
-            _context2.prev = 11;
-            _context2.t0 = _context2["catch"](4);
+          case 9:
+            _context2.prev = 9;
+            _context2.t0 = _context2["catch"](2);
             res.status(500).json({
               error: _context2.t0.toString()
             });
 
-          case 14:
+          case 12:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[4, 11]]);
+    }, _callee2, null, [[2, 9]]);
   }));
 
   return function (_x3, _x4) {
@@ -119,36 +115,32 @@ function () {
         switch (_context3.prev = _context3.next) {
           case 0:
             id = req.params.id;
-            _context3.next = 3;
-            return (0, _database.connect)();
-
-          case 3:
-            db = _context3.sent;
-            _context3.prev = 4;
-            _context3.next = 7;
+            db = req.app.locals.database;
+            _context3.prev = 2;
+            _context3.next = 5;
             return db.collection(collection).find({
               user_id: (0, _mongodb.ObjectID)(id)
             });
 
-          case 7:
+          case 5:
             result = _context3.sent;
             res.json(result);
-            _context3.next = 14;
+            _context3.next = 12;
             break;
 
-          case 11:
-            _context3.prev = 11;
-            _context3.t0 = _context3["catch"](4);
+          case 9:
+            _context3.prev = 9;
+            _context3.t0 = _context3["catch"](2);
             res.status(500).json({
               error: _context3.t0.toString()
             });
 
-          case 14:
+          case 12:
           case "end":
             return _context3.stop();
         }
       }
-    }, _callee3, null, [[4, 11]]);
+    }, _callee3, null, [[2, 9]]);
   }));
 
   return function (_x5, _x6) {

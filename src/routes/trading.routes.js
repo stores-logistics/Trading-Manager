@@ -19,8 +19,9 @@ router.get('/store/:id', async (req, res) => {
     const { id } = req.params;
     const db = req.app.locals.database;
     try{
-    const result = await db.collection(collection).find({ store_id: id});
-    res.json(result)
+    const result = await db.collection(collection).find({store_id : id }).toArray();
+    // console.log(result);
+    res.json(result);
     }
     catch (error) {
         res.status(500).json({ error: error.toString() });
@@ -31,8 +32,9 @@ router.get('/user/:id', async (req, res) => {
     const { id } = req.params;
     const db = req.app.locals.database;
     try{
-    const result = await db.collection(collection).find({ user_id: ObjectID(id) });
-    res.json(result)
+        const result = await db.collection(collection).find({user_id : id }).toArray();
+        res.json(result)
+    // console.log(result);
     }
     catch (error) { 
         res.status(500).json({ error: error.toString() });
