@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
         price: price,
     }
     const result = await db.collection(collection).insert(trading);
-    res.send(result);
+    res.send(result["ops"]);
 })
 
 router.put('    ', async (req, res) => {
