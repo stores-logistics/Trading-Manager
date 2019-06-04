@@ -51,9 +51,12 @@ router.post('/', async (req, res) => {
         product_id: product_id,
         price: price,
     }
-    const result = await db.collection(collection).insert(trading);
-    res.send(result["ops"]);
+    const result = await db.collection(collection).insertOne(trading);
+    console.log(result['ops'][0]);
+    res.send(result["ops"][0]);
 })
+
+
 
 router.put('    ', async (req, res) => {
     const db = await connect();
