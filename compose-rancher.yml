@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    image: biherrerap/stores-logistics
+    links:
+      - db
+    ports:
+      - 4005:4005
+    depends_on:
+      - db
+  db:
+    container_name: trading_db
+    image: mongo
+    expose:
+      - "27017"
+    volumes:
+        - mongodata:/data/db
+
+volumes:
+  mongodata:

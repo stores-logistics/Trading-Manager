@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
         price: price,
     }
     const result = await db.collection(collection).insertOne(trading);
-    console.log(result['ops'][0]);
+//  console.log(result['ops'][0]);
     res.send(result["ops"][0]);
 })
 
